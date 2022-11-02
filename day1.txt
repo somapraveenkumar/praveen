@@ -1,0 +1,287 @@
+Unix-
+-----------------
+->it is an operating system 
+
+->operating system is an interface b/w the application software and hardware
+
+->An operating system is a software which performs all the basic tasks like file management, memory management, process management, handling input and output, 
+  and controlling peripheral devices such as disk drives and printers.
+
+->it's multitasking ,multiuser and open source
+->it's secure , u can give diff permission to diff user
+->it is mainly used in server side
+
+Features->
+----------------
+->highly stablized ->no frequent updation
+->secure
+->highly reliable
+->clashing is less
+->whatsapp and netflix is using unix in their server side
+->very fast in process ~ IBM WATSON - super computer
+
+
+Basic Commands->
+-------------------
+mkdir dir_name ->to create dir/folder
+cd dir_name->to move inside the dir
+cd ..->yto go to parent dir
+ls->to list the content of dir
+touch file->to create empty file
+
+cat->
+----------
+cat file-> to read the content of file
+cat < file -> to read the content of file
+cat > file ->to write the content in file and 
+             it will delete the previous content present in file
+cat >> file-> to append in a file means it will retain the previous content 
+              and new content will be added
+
+-> to come out of cat command give ctrl+c
+
+
+[er1169748@BL1UL056 OCT_Unix]$ cat <file
+Good Morning
+Good Afternoon
+[er1169748@BL1UL056 OCT_Unix]$ cat >file1
+Hello
+^C
+[er1169748@BL1UL056 OCT_Unix]$ cat file1
+Hello
+[er1169748@BL1UL056 OCT_Unix]$ cat file1 file
+Hello
+Good Morning
+Good Afternoon
+[er1169748@BL1UL056 OCT_Unix]$ cat file1 file >file3
+[er1169748@BL1UL056 OCT_Unix]$ ls
+file  file1  file3
+[er1169748@BL1UL056 OCT_Unix]$ cat file3
+Hello
+Good Morning
+Good Afternoon
+
+
+
+ls->listing of content in dir
+-------------------------------------------    
+-a ->to get hidden files
+-l ->long listing of a file (u can write it as ll)
+-r->to get content in reverse
+-i->to get inode no
+-1->to get 1 content in 1 line
+-R->to get recursive content
+
+
+[er1169748@BL1UL056 OCT_Unix]$ ls -i
+69932675 dir  35439546 file  35439547 file1  35439549 file3
+[er1169748@BL1UL056 OCT_Unix]$ ls -i1
+69932675 dir
+35439546 file
+35439547 file1
+35439549 file3
+[er1169748@BL1UL056 OCT_Unix]$ ls -ir1
+35439549 file3
+35439547 file1
+35439546 file
+69932675 dir
+
+-------------------------------------
+pwd->to get the path of current working dir(present working dir)
+clear->to clear the screen
+
+----------------------
+
+
+rm-> to remove the file
+------------------------
+-i ->to prompt before every removal
+-f ->to remove error message
+-r ->to cecursively del 
+
+->rmdir->to del dir
+->rm -rf dir_name-> to recusively and forcefully delete the content of the dir
+
+->man command_name->to get the manual of that particular command
+to come out of this press q
+
+
+
+cal->(calendar)
+--------------
+-1 ->current month
+-3 ->prev,current,next month
+-m->to get monday as first day
+-s->to get sunday as first day
+-y ->to get whole year cal
+-j -> to get julian cal
+
+
+to highlight particular date u can pass that date with cal command
+-----------------------------------------------------------------------
+[er1169748@BL1UL056 OCT_Unix]$ cal 27 06 2022
+      June 2022
+Su Mo Tu We Th Fr Sa
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30
+
+
+date->to get current date and time
+------------------------------
+%a-> abbrevated day name
+%A->full weekday name
+%b->abb month name
+%B->full month name
+%d->day of month
+%y->abb year
+%Y->full year
+%C-> century
+%x->for date in numeric format
+%X->time
+
+
+
+[er1169748@BL1UL056 OCT_Unix]$ date
+Thu Oct 27 11:37:35 IST 2022
+[er1169748@BL1UL056 OCT_Unix]$ date +"%a"
+Thu
+[er1169748@BL1UL056 OCT_Unix]$ date +"%A"
+Thursday
+[er1169748@BL1UL056 OCT_Unix]$ date +"%b"
+Oct
+[er1169748@BL1UL056 OCT_Unix]$ date +"%B"
+October
+[er1169748@BL1UL056 OCT_Unix]$ date +"%d"
+27
+[er1169748@BL1UL056 OCT_Unix]$ date +"%a %d %b"
+Thu 27 Oct
+[er1169748@BL1UL056 OCT_Unix]$ date +"%a %d %B"
+Thu 27 October
+[er1169748@BL1UL056 OCT_Unix]$ date +"%A %d %B"
+Thursday 27 October
+[er1169748@BL1UL056 OCT_Unix]$ date +"%A %d %B %y"
+Thursday 27 October 22
+[er1169748@BL1UL056 OCT_Unix]$ date +"%A %d %B %Y"
+Thursday 27 October 2022
+[er1169748@BL1UL056 OCT_Unix]$ date +%C
+20
+[er1169748@BL1UL056 OCT_Unix]$ date +%x
+10/27/2022
+[er1169748@BL1UL056 OCT_Unix]$ date +%X
+11:42:52 AM
+[er1169748@BL1UL056 OCT_Unix]$ date
+Thu Oct 27 11:43:00 IST 2022
+
+
+
+
+who->it will return no of logged in users
+who am i->will give detail of current user
+who -m->will give detail of current user
+who -H->it will return no of logged in users with heading
+who -b->return system boot time
+
+which command_name->it will return where this command is stored(path of command)
+
+
+uname->will return operating syatem name
+-o->OS name
+-p->processor name
+-s->kernel name
+-n->network node hostname
+-v->kernel version
+-r->kernel release
+
+
+[er1169748@BL1UL056 OCT_Unix]$ uname
+Linux
+[er1169748@BL1UL056 OCT_Unix]$ uname -o
+GNU/Linux
+[er1169748@BL1UL056 OCT_Unix]$ uname -s
+Linux
+[er1169748@BL1UL056 OCT_Unix]$ uname -p
+x86_64
+[er1169748@BL1UL056 OCT_Unix]$ uname -v
+#2 SMP Fri Oct 8 16:23:01 PDT 2021
+[er1169748@BL1UL056 OCT_Unix]$ uname -r
+5.4.17-2136.300.7.el8uek.x86_64
+[er1169748@BL1UL056 OCT_Unix]$ uname -n
+BL1UL056
+
+
+
+echo->used to print anything on screen /give output
+-------------------------------------------------
+-e ->for intrepretation of backslash char
+-E ->disable interpretation of backslash
+-n ->to stay in same line after echo 
+
+
+
+printf->u have to give format specifier for getting the o/p
+
+printf "%d" 4
+printf "%d %s %d" 4 Hi 9
+
+
+
+bc->to open calculator
+----------------------------
+by default it will give only integer part
+->if u want to get decimal part u can give scale
+->scale value will define the no of decimal points
+
+scale=2
+
+4/2+9+8; 99/9
+19.00
+11.00
+
+
+if u want to come out of calculator give ctrl+c
+
+----------------------------------------------------
+tty->to get terminal detail
+
+[er1169748@BL1UL056 OCT_Unix]$ tty
+/dev/pts/1
+
+
+
+Pipeline operator->|
+-----------------------------
+-> is to combine more than one command
+->the o/p of first command will pass as input to another command
+
+
+
+wc->word count
+----------------------
+-l->no of lines
+-c-> no of characters
+-w->no of words
+
+
+[er1169748@BL1UL056 OCT_Unix]$ cat file1
+Hello
+[er1169748@BL1UL056 OCT_Unix]$ cat file1 |wc -l
+1
+[er1169748@BL1UL056 OCT_Unix]$ cat file1 |wc -w
+1
+[er1169748@BL1UL056 OCT_Unix]$ cat file1 |wc -c
+6
+[er1169748@BL1UL056 OCT_Unix]$ ls -1
+d2
+file
+file1
+file3
+[er1169748@BL1UL056 OCT_Unix]$ ls -1|wc -l
+4
+[er1169748@BL1UL056 OCT_Unix]$ ls -1|wc -w
+4
+[er1169748@BL1UL056 OCT_Unix]$ ls -1|wc -c
+20
+
